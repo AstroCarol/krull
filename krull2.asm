@@ -156,9 +156,196 @@ prep_forte_meio_4: lui $9, 0x1001
 forte_meio_4: sw $10, 0($9)
 	addi $9, $9, 4
 	addi $11, $11, 1
-	beq $11, 90, fim
+	beq $11, 90, prep_princesa_1
 	j forte_meio_4
 	
+prep_princesa_1: lui $9, 0x1001
+	addi $10, $0, 0xD07070 #Mr. salmon da princesa
+	addi $8, $0, 128 #Quantidade de pixels da princesa
+	add $11, $0, $0 #Resetando quantidade
+	addi $9, $9, 3252	
+	
+princesa: sw $10, 0($9)
+	addi $9, $9, 4
+	addi $11, $11, 1
+	beq $11, 2, prep_princesa_2
+	j princesa
+	
+prep_princesa_2: lui $9, 0x1001
+	addi $10, $0, 0xD07070 #Mr. salmon da princesa
+	addi $8, $0, 128 #Quantidade de pixels da princesa
+	add $11, $0, $0 #Resetando quantidade
+	addi $9, $9, 3756
+
+princesa_2: sw $10, 0($9)
+	addi $9, $9, 4
+	addi $11, $11, 1
+	beq $11, 6, prep_princesa_3
+	j princesa_2
+
+prep_princesa_3: lui $9, 0x1001
+	addi $10, $0, 0xC070B0 #Mr. lilac da princesa
+	addi $8, $0, 128 #Quantidade de pixels da princesa
+	add $11, $0, $0 #Resetando quantidade
+	addi $9, $9, 4268
+	
+princesa_3: sw $10, 0($9)
+	addi $9, $9, 4
+	addi $11, $11, 1
+	beq $11, 6, prep_princesa_4
+	j princesa_3
+
+prep_princesa_4: lui $9, 0x1001
+	addi $10, $0, 0xA070CC #Mr. lilac da princesa
+	addi $8, $0, 128 #Quantidade de pixels da princesa
+	add $11, $0, $0 #Resetando quantidade
+	addi $9, $9, 4788
+	
+princesa_4: sw $10, 0($9)
+	addi $9, $9, 4
+	addi $11, $11, 1
+	beq $11, 2, prep_princesa_5
+	j princesa_4
+	
+prep_princesa_5: lui $9, 0x1001
+	addi $10, $0, 0xA070CC #Mr. lilac da princesa
+	addi $8, $0, 128 #Quantidade de pixels da princesa
+	add $11, $0, $0 #Resetando quantidade
+	addi $9, $9, 5284
+	
+princesa_5: sw $10, 0($9)
+	addi $9, $9, 4
+	addi $11, $11, 1
+	beq $11, 10, prep_princesa_6
+	j princesa_5
+	
+prep_princesa_6: lui $9, 0x1001
+	addi $10, $0, 0x7C70D0 #Mr. blue da princesa
+	addi $8, $0, 128 #Quantidade de pixels da princesa
+	add $11, $0, $0 #Resetando quantidade
+	addi $9, $9, 5804
+
+princesa_6: sw $10, 0($9)
+	addi $9, $9, 4
+	addi $11, $11, 1
+	beq $11, 6, prep_princesa_7
+	j princesa_6
+	
+prep_princesa_7: lui $9, 0x1001
+	addi $10, $0, 0x7C70D0 #Mr. blue da princesa
+	addi $8, $0, 128 #Quantidade de pixels da princesa
+	add $11, $0, $0 #Resetando quantidade
+	addi $9, $9, 6308
+	
+princesa_7: sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 12
+	addi, $11, $11, 2
+	beq $11, 6, prep_princesa_8
+	j princesa_7
+
+prep_princesa_8: lui $9, 0x1001
+	addi $10, $0, 0x6874D0 #Mr. blue da princesa
+	addi $8, $0, 128 #Quantidade de pixels da princesa
+	add $11, $0, $0 #Resetando quantidade
+	addi $9, $9, 6828
+	
+princesa_8: sw $10, 0($9)
+	addi $9, $9, 4
+	addi $11, $11, 1
+	beq $11, 6, prep_princesa_9
+	j princesa_8
+	
+prep_princesa_9: lui $9, 0x1001
+	addi $10, $0, 0x6874D0 #Mr. blue da princesa
+	addi $8, $0, 128 #Quantidade de pixels da princesa
+	add $11, $0, $0 #Resetando quantidade
+	addi $9, $9, 7332
+	
+princesa_9: sw $10, 0($9)
+	addi $9, $9, 4
+	addi $11, $11, 1
+	beq $11, 10, prep_princesa_10
+	j princesa_9
+
+prep_princesa_10:  lui $9, 0x1001
+	addi $10, $0, 0x6888CC #Mr. lavanda da princesa
+	addi $8, $0, 128 #Quantidade de pixels da princesa
+	add $11, $0, $0 #Resetando quantidade
+	addi $9, $9, 7836
+	
+princesa_10: sw $10, 0($9)
+	addi $9, $9, 4
+	addi $11, $11, 1
+	beq $11, 14, prep_princesa_11
+	j princesa_10
+	
+prep_princesa_11: lui $9, 0x1001
+	addi $10, $0, 0x689CC0 #Mr. lavanda da princesa
+	addi $8, $0, 128 #Quantidade de pixels da princesa
+	add $11, $0, $0 #Resetando quantidade
+	addi $9, $9, 8348
+	
+princesa_11: sw $10, 0($9)
+	addi $9, $9, 4
+	addi $11, $11, 1
+	beq $11, 14, prep_princesa_12
+	j princesa_11
+
+prep_princesa_12: lui $9, 0x1001
+	addi $10, $0, 0x68B494 #Mr. green da princesa
+	addi $8, $0, 128 #Quantidade de pixels da princesa
+	add $11, $0, $0 #Resetando quantidade
+	addi $9, $9, 8868
+	
+princesa_12: sw $10, 0($9)
+	addi $9, $9, 4
+	addi $11, $11, 1
+	beq $11, 10, prep_ampulheta
+	j princesa_12
+	
+prep_ampulheta: lui $9, 0x1001
+	addi $10, $0, 0xffffff #Mr. White da ampulheta
+	add $11, $0, $0 #Resetando quantidade 
+	
+	
+ampulheta: sw $10, 464($9)
+	addi $9, $9, 0
+	sw $10, 468($9)
+	addi $9, $9, 0
+	sw $10, 472($9)
+	addi $9, $9, 0
+	sw $10, 476($9)
+	addi $9, $9, 0
+	sw $10, 480($9)
+	addi $9, $9, 0
+	sw $10, 980($9)
+	addi $9, $9, 0
+	sw $10, 984($9)
+	addi $9, $9, 0
+	sw $10, 988($9)
+	addi $9, $9, 0
+	sw $10, 1496($9)
+	addi $9, $9, 0
+	sw $10, 2004($9)
+	addi $9, $9, 0
+	sw $10, 2008($9)
+	addi $9, $9, 0
+	sw $10, 2012($9)
+	addi $9, $9, 0
+	sw $10, 2512($9)
+	addi $9, $9, 0
+	sw $10, 2516($9)
+	addi $9, $9, 0
+	sw $10, 2520($9)
+	addi $9, $9, 0
+	sw $10, 2524($9)
+	addi $9, $9, 0
+	sw $10, 2528($9)
+	addi $9, $9, 0
+	beq $11, 17, fim
+
 fim: 	nop
 	
 	
