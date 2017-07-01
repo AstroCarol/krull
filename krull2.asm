@@ -344,7 +344,328 @@ ampulheta: sw $10, 464($9)
 	addi $9, $9, 0
 	sw $10, 2528($9)
 	addi $9, $9, 0
-	beq $11, 17, fim
+	beq $11, 17, prep_monstro
+	
+prep_monstro: lui $9, 0x1001
+	addi $10, $0, 0x843C14 #Mr. marrom do monstro 0x000000(Cor do contorno)
+	addi $8, $0, 0 #Movivemnto inicial para direita
+	add $11, $0, $0 #Resetando quantidade
+	addi $9, $9, 12900
+	
+monstro: addi $10, $0, 0x843C14 
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 484
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 484
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 500
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 484
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 20
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 468
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 20
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 484
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 500
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 484
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 468
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 484
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 484
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 20
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 468
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 20
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 468
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 20
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 4
+	addi $10, $0, 0x000000 #Contorno preto
+	addi $9, $9, -6692
+	sw $10, 0($9)
+	addi $9, $9, 20
+	sw $10, 0($9)
+	addi $9, $9, 476
+	sw $10, 0($9)
+	addi $9, $9, 52
+	sw $10, 0($9)
+	addi $9, $9, 476
+	sw $10, 0($9)
+	addi $9, $9, 20
+	sw $10, 0($9)
+	addi $9, $9, 492
+	sw $10, 0($9)
+	addi $9, $9, 20
+	sw $10, 0($9)
+	addi $9, $9, 476
+	sw $10, 0($9)
+	addi $9, $9, 20
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 20
+	sw $10, 0($9)
+	addi $9, $9, 460
+	sw $10, 0($9)
+	addi $9, $9, 20
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 20
+	sw $10, 0($9)
+	addi $9, $9, 476
+	sw $10, 0($9)
+	addi $9, $9, 20
+	sw $10, 0($9)
+	addi $9, $9, 492
+	sw $10, 0($9)
+	addi $9, $9, 20
+	sw $10, 0($9)
+	addi $9, $9, 476
+	sw $10, 0($9)
+	addi $9, $9, 52
+	sw $10, 0($9)
+	addi $9, $9, 460
+	sw $10, 0($9)
+	addi $9, $9, 52
+	sw $10, 0($9)
+	addi $9, $9, 476
+	sw $10, 0($9)
+	addi $9, $9, 20
+	sw $10, 0($9)
+	addi $9, $9, 476
+	sw $10, 0($9)
+	addi $9, $9, 20
+	sw $10, 0($9)
+	addi $9, $9, 12
+	sw $10, 0($9)
+	addi $9, $9, 20
+	sw $10, 0($9)
+	addi $9, $9, 460
+	sw $10, 0($9)
+	addi $9, $9, 20
+	sw $10, 0($9)
+	addi $9, $9, 12
+	sw $10, 0($9)
+	addi $9, $9, 20
+	sw $10, 0($9)
+	addi $9, $9, 460
+	sw $10, 0($9)
+	addi $9, $9, 20
+	sw $10, 0($9)
+	addi $9, $9, 12
+	sw $10, 0($9)
+	addi $9, $9, 20
+	sw $10, 0($9)
+	addi $9, $9, -6688
+	add $12, $0, $0
+	j tempo_monstro
+
+monstro_direita: addi $9, $9, 4
+	addi $11, $11, 1
+	beq $11, 80, prep_esquerda
+	j monstro
+	
+prep_esquerda: addi $8, $0, 1 #Movivemnto para a esquerda
+	add $11, $0, $0
+	j monstro_esquerda
+
+monstro_esquerda: addi $9, $9, -4
+	addi $11, $11, 1
+	beq $11, 80, prep_direita
+	j monstro
+	
+prep_direita: addi $8, $0, 0 #Movivemnto para a esquerda
+	add $11, $0, $0
+	j monstro_direita
+	
+tempo_monstro: addi $12, $12, 1 #Intervalo de tempo de locomoção do monstro
+	beq $12, 10000, verificar_lado_do_monstro
+	j tempo_monstro
+					
+verificar_lado_do_monstro: beq $8, 0, monstro_direita
+	beq $8, 1, monstro_esquerda
 
 fim: 	nop
 	
