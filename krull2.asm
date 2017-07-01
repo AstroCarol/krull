@@ -344,7 +344,107 @@ ampulheta: sw $10, 464($9)
 	addi $9, $9, 0
 	sw $10, 2528($9)
 	addi $9, $9, 0
-	beq $11, 17, prep_monstro
+	beq $11, 17, prep_principe
+	
+prep_principe: lui $9, 0x1001
+	addi $10, $0, 0xD0805C #Mr. cor de pele do principe 0x000000(Cor do contorno)
+	addi $8, $0, 0 
+	add $11, $0, $0 #Resetando quantidade
+	addi $9, $9, 22468
+
+principe: sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 492
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 492
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 500
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 500
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 500
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 508
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 508
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 500
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 492
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 12
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 492
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 12
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 4
+	j prep_monstro
 	
 prep_monstro: lui $9, 0x1001
 	addi $10, $0, 0x843C14 #Mr. marrom do monstro 0x000000(Cor do contorno)
