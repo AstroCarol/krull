@@ -115,49 +115,50 @@ prep_forte_meio_1: lui $9, 0x1001
 	addi $10, $0, 0x985C28 #Mr. Brown do forte
 	addi $8, $0, 128 #Quantidade de pixels do forte
 	add $11, $0, $0 #Resetando quantidade
-	addi $9, $9, 9780
+	addi $9, $9, 9884
 	
 forte_meio: sw $10, 0($9)
 	addi $9, $9, 4
 	addi $11, $11, 1
-	beq $11, 103, prep_forte_meio_2
+	beq $11, 77, prep_forte_meio_2
 	j forte_meio
 	
 prep_forte_meio_2: lui $9, 0x1001
 	addi $10, $0, 0x985C28 #Mr. Brown do forte
 	addi $8, $0, 128 #Quantidade de pixels do forte
 	add $11, $0, $0 #Resetando quantidade
-	addi $9, $9, 10308
+	addi $9, $9, 10396
 	
 forte_meio_2: sw $10, 0($9)
 	addi $9, $9, 4
 	addi $11, $11, 1
-	beq $11, 98, prep_forte_meio_3
+	beq $11, 76, prep_forte_meio_3
 	j forte_meio_2
 	
 prep_forte_meio_3: lui $9, 0x1001
 	addi $10, $0, 0x985C28 #Mr. Brown do forte
 	addi $8, $0, 128 #Quantidade de pixels do forte
 	add $11, $0, $0 #Resetando quantidade
-	addi $9, $9, 10820
+	addi $9, $9, 10908
 
 forte_meio_3:  sw $10, 0($9)
 	addi $9, $9, 4
 	addi $11, $11, 1
-	beq $11, 98, prep_forte_meio_4
+	beq $11, 76, prep_forte_meio_4
 	j forte_meio_3
 	
 prep_forte_meio_4: lui $9, 0x1001
 	addi $10, $0, 0x985C28 #Mr. Brown do forte
 	addi $8, $0, 128 #Quantidade de pixels do forte
 	add $11, $0, $0 #Resetando quantidade
-	addi $9, $9, 11348
+	addi $9, $9, 11420
 	
 forte_meio_4: sw $10, 0($9)
 	addi $9, $9, 4
 	addi $11, $11, 1
-	beq $11, 90, prep_princesa_1
+	beq $11, 72, prep_princesa_1
 	j forte_meio_4
+	
 	
 prep_princesa_1: lui $9, 0x1001
 	addi $10, $0, 0xD07070 #Mr. salmon da princesa
@@ -344,113 +345,199 @@ ampulheta: sw $10, 464($9)
 	addi $9, $9, 0
 	sw $10, 2528($9)
 	addi $9, $9, 0
-	beq $11, 17, prep_principe
+	beq $11, 17, prep_monstro
 	
-prep_principe: lui $9, 0x1001
-	addi $10, $0, 0xD0805C #Mr. cor de pele do principe 0x000000(Cor do contorno)
-	addi $8, $0, 0 
-	add $11, $0, $0 #Resetando quantidade
-	addi $9, $9, 22468
-
-principe: sw $10, 0($9)
-	addi $9, $9, 4
-	sw $10, 0($9)
-	addi $9, $9, 4
-	sw $10, 0($9)
-	addi $9, $9, 4
-	sw $10, 0($9)
-	addi $9, $9, 4
-	sw $10, 0($9)
-	addi $9, $9, 4
-	sw $10, 0($9)
-	addi $9, $9, 492
-	sw $10, 0($9)
-	addi $9, $9, 4
-	sw $10, 0($9)
-	addi $9, $9, 4
-	sw $10, 0($9)
-	addi $9, $9, 4
-	sw $10, 0($9)
-	addi $9, $9, 4
-	sw $10, 0($9)
-	addi $9, $9, 4
-	sw $10, 0($9)
-	addi $9, $9, 492
-	sw $10, 0($9)
-	addi $9, $9, 4
-	sw $10, 0($9)
-	addi $9, $9, 4
-	sw $10, 0($9)
-	addi $9, $9, 4
-	sw $10, 0($9)
-	addi $9, $9, 4
-	sw $10, 0($9)
-	addi $9, $9, 4
-	sw $10, 0($9)
-	addi $9, $9, 500
-	sw $10, 0($9)
-	addi $9, $9, 4
-	sw $10, 0($9)
-	addi $9, $9, 500
-	sw $10, 0($9)
-	addi $9, $9, 4
-	sw $10, 0($9)
-	addi $9, $9, 4
-	sw $10, 0($9)
-	addi $9, $9, 4
-	sw $10, 0($9)
-	addi $9, $9, 4
-	sw $10, 0($9)
-	addi $9, $9, 4
-	sw $10, 0($9)
-	addi $9, $9, 500
-	sw $10, 0($9)
-	addi $9, $9, 4
-	sw $10, 0($9)
-	addi $9, $9, 508
-	sw $10, 0($9)
-	addi $9, $9, 4
-	sw $10, 0($9)
-	addi $9, $9, 508
-	sw $10, 0($9)
-	addi $9, $9, 4
-	sw $10, 0($9)
-	addi $9, $9, 500
-	sw $10, 0($9)
-	addi $9, $9, 4
-	sw $10, 0($9)
-	addi $9, $9, 4
-	sw $10, 0($9)
-	addi $9, $9, 4
-	sw $10, 0($9)
-	addi $9, $9, 4
-	sw $10, 0($9)
-	addi $9, $9, 4
-	sw $10, 0($9)
-	addi $9, $9, 492
-	sw $10, 0($9)
-	addi $9, $9, 4
-	sw $10, 0($9)
-	addi $9, $9, 12
-	sw $10, 0($9)
-	addi $9, $9, 4
-	sw $10, 0($9)
-	addi $9, $9, 492
-	sw $10, 0($9)
-	addi $9, $9, 4
-	sw $10, 0($9)
-	addi $9, $9, 12
-	sw $10, 0($9)
-	addi $9, $9, 4
-	sw $10, 0($9)
-	addi $9, $9, 4
-	j prep_monstro
-	
-prep_monstro: lui $9, 0x1001
-	addi $10, $0, 0x843C14 #Mr. marrom do monstro 0x000000(Cor do contorno)
-	addi $8, $0, 0 #Movivemnto inicial para direita
-	add $11, $0, $0 #Resetando quantidade
+prep_monstro: addi $8, $0, 0 # Movivemnto inicial para direita
+	lui $9, 0x1001
 	addi $9, $9, 12900
+	add $11, $0, $0 # Resetando quantidade
+	lui $13, 0x1001
+	addi $13, $13, 22468
+	
+prep_principe: add $13, $13, $20 
+	addi $16, $0, 0
+	li $16, 0
+
+principe:addi $10, $0, 0xD0805C 
+	sw $10, 0($13)
+	addi $13, $13, 4
+	sw $10, 0($13)
+	addi $13, $13, 4
+	sw $10, 0($13)
+	addi $13, $13, 4
+	sw $10, 0($13)
+	addi $13, $13, 4
+	sw $10, 0($13)
+	addi $13, $13, 4
+	sw $10, 0($13)
+	addi $13, $13, 492
+	sw $10, 0($13)
+	addi $13, $13, 4
+	sw $10, 0($13)
+	addi $13, $13, 4
+	sw $10, 0($13)
+	addi $13, $13, 4
+	sw $10, 0($13)
+	addi $13, $13, 4
+	sw $10, 0($13)
+	addi $13, $13, 4
+	sw $10, 0($13)
+	addi $13, $13, 492
+	sw $10, 0($13)
+	addi $13, $13, 4
+	sw $10, 0($13)
+	addi $13, $13, 4
+	sw $10, 0($13)
+	addi $13, $13, 4
+	sw $10, 0($13)
+	addi $13, $13, 4
+	sw $10, 0($13)
+	addi $13, $13, 4
+	sw $10, 0($13)
+	addi $13, $13, 500
+	sw $10, 0($13)
+	addi $13, $13, 4
+	sw $10, 0($13)
+	addi $13, $13, 500
+	sw $10, 0($13)
+	addi $13, $13, 4
+	sw $10, 0($13)
+	addi $13, $13, 4
+	sw $10, 0($13)
+	addi $13, $13, 4
+	sw $10, 0($13)
+	addi $13, $13, 4
+	sw $10, 0($13)
+	addi $13, $13, 4
+	sw $10, 0($13)
+	addi $13, $13, 500
+	sw $10, 0($13)
+	addi $13, $13, 4
+	sw $10, 0($13)
+	addi $13, $13, 508
+	sw $10, 0($13)
+	addi $13, $13, 4
+	sw $10, 0($13)
+	addi $13, $13, 508
+	sw $10, 0($13)
+	addi $13, $13, 4
+	sw $10, 0($13)
+	addi $13, $13, 500
+	sw $10, 0($13)
+	addi $13, $13, 4
+	sw $10, 0($13)
+	addi $13, $13, 4
+	sw $10, 0($13)
+	addi $13, $13, 4
+	sw $10, 0($13)
+	addi $13, $13, 4
+	sw $10, 0($13)
+	addi $13, $13, 4
+	sw $10, 0($13)
+	addi $13, $13, 492
+	sw $10, 0($13)
+	addi $13, $13, 4
+	sw $10, 0($13)
+	addi $13, $13, 12
+	sw $10, 0($13)
+	addi $13, $13, 4
+	sw $10, 0($13)
+	addi $13, $13, 492
+	sw $10, 0($13)
+	addi $13, $13, 4
+	sw $10, 0($13)
+	addi $13, $13, 12
+	sw $10, 0($13)
+	addi $13, $13, 4
+	sw $10, 0($13)
+	addi $13, $13, 4
+	addi $10, $0, 0x000000 #Contorno preto
+	addi $13, $13, -5656
+	sw $10, 0($13)
+	addi $13, $13, 4
+	sw $10, 0($13)
+	addi $13, $13, 4
+	sw $10, 0($13)
+	addi $13, $13, 4
+	sw $10, 0($13)
+	addi $13, $13, 4
+	sw $10, 0($13)
+	addi $13, $13, 4
+	sw $10, 0($13)
+	addi $13, $13, 488
+	sw $10, 0($13)
+	addi $13, $13, 28
+	sw $10, 0($13)
+	addi $13, $13, 484
+	sw $10, 0($13) 
+	addi $13, $13, 28
+	sw $10, 0($13)
+	addi $13, $13, 484
+	sw $10, 0($13)
+	addi $13, $13, 28
+	sw $10, 0($13)
+	addi $13, $13, 488
+	sw $10, 0($13)
+	addi $13, $13, 4
+	sw $10, 0($13)
+	addi $13, $13, 12
+	sw $10, 0($13)
+	addi $13, $13, 4
+	sw $10, 0($13)
+	addi $13, $13, 488
+	sw $10, 0($13)
+	addi $13, $13, 28
+	sw $10, 0($13)
+	addi $13, $13, 488
+	sw $10, 0($13)
+	addi $13, $13, 4
+	sw $10, 0($13)
+	addi $13, $13, 12
+	sw $10, 0($13)
+	addi $13, $13, 4
+	sw $10, 0($13)
+	addi $13, $13, 496
+	sw $10, 0($13)
+	addi $13, $13, 12
+	sw $10, 0($13)
+	addi $13, $13, 496
+	sw $10, 0($13)
+	addi $13, $13, 4
+	sw $10, 0($13)
+	addi $13, $13, 12
+	sw $10, 0($13)
+	addi $13, $13, 4
+	sw $10, 0($13)
+	addi $13, $13, 488
+	sw $10, 0($13)
+	addi $13, $13, 28
+	sw $10, 0($13)
+	addi $13, $13, 484
+	sw $10, 0($13)
+	addi $13, $13, 12
+	sw $10, 0($13)
+	addi $13, $13, 4
+	sw $10, 0($13)
+	addi $13, $13, 12
+	sw $10, 0($13)
+	addi $13, $13, 484
+	sw $10, 0($13)
+	addi $13, $13, 12
+	sw $10, 0($13)
+	addi $13, $13, 4
+	sw $10, 0($13)
+	addi $13, $13, 12
+	sw $10, 0($13)
+	addi $13, $13, 488
+	sw $10, 0($13)
+	addi $13, $13, 4
+	sw $10, 0($13)
+	addi $13, $13, 12
+	sw $10, 0($13)
+	addi $13, $13, 4
+	sw $10, 0($13)
+	addi $13, $13, -5652
+	j monstro
 	
 monstro: addi $10, $0, 0x843C14 
 	sw $10, 0($9)
@@ -745,7 +832,7 @@ monstro: addi $10, $0, 0x843C14
 monstro_direita: addi $9, $9, 4
 	addi $11, $11, 1
 	beq $11, 80, prep_esquerda
-	j monstro
+	j movimenta_principe
 	
 prep_esquerda: addi $8, $0, 1 #Movivemnto para a esquerda
 	add $11, $0, $0
@@ -754,19 +841,89 @@ prep_esquerda: addi $8, $0, 1 #Movivemnto para a esquerda
 monstro_esquerda: addi $9, $9, -4
 	addi $11, $11, 1
 	beq $11, 80, prep_direita
-	j monstro
+	j movimenta_principe
 	
 prep_direita: addi $8, $0, 0 #Movivemnto para a esquerda
 	add $11, $0, $0
 	j monstro_direita
 	
-tempo_monstro: addi $12, $12, 1 #Intervalo de tempo de locomo艫o do monstro
+tempo_monstro: addi $12, $12, 1 #Intervalo de tempo de locomo巽達o do monstro
 	beq $12, 10000, verificar_lado_do_monstro
 	j tempo_monstro
 					
 verificar_lado_do_monstro: beq $8, 0, monstro_direita
 	beq $8, 1, monstro_esquerda
 
-fim: 	nop
+movimenta_principe: addi $20, $0, 0 
+	addi $23, $0, 119 #Tecla W
+	addi $24, $0, 97 #Tecla A
+	addi $25, $0, 115 #Tecla S
+	addi $26, $0, 100 #Tecla D
 	
+entrada_teclado:
+	lui  $18, 0xffff
+	lw $17, 0($18)
+	beq $17, $0, entrada_teclado
+	addi $14, $18, 4
+	lw $15, 0($14)
+	beq $15, $23, w
+	beq $15, $24, a
+	beq $15, $25, s
+	beq $15, $26, d 
+	j entrada_teclado
 	
+w: addi $20, $20, -512
+	j colisao
+
+a: addi $20, $20, -4
+	j colisao
+
+s: addi $20, $20, 512
+	j colisao
+
+d: addi $20, $20, 4
+	j colisao
+
+colisao: add $17, $13, $20 #verificar colis達o superiro esquerda
+	addi $17, $17, -8
+	lw $17, ($17)
+	bne $17, 0x000000, you_lose
+	add $17, $13, $20 #verificar colis達o superior direita
+	addi $17, $17, 28
+	lw  $17, ($17)
+	bne $17, 0x000000, you_lose
+	add $17, $13, $20 #verificar colis達o inferiror esquerda
+	addi $17, $17, 5628
+	lw $17, ($17)
+	bne $17, 0x000000, you_lose
+	add $17, $13, $20 #verificar colis達o inferiror direita
+	addi $17, $17, 5640
+	lw $17, ($17)
+	bne $17, 0x000000, verifica_marrom_monstro
+	j prep_principe
+	
+verifica_marrom_monstro: add $17, $13, $20 #verificar colis達o inferiror direita
+	addi $17, $17, 5640
+	lw $17, ($17)
+	bne $17, 0x843C14, verifica_marrom_forte
+	j you_lose
+	
+verifica_marrom_forte: add $17, $13, $20 #verificar colis達o inferiror direita
+	addi $17, $17, 5640
+	lw $17, ($17)
+	bne $17, 0x985C28, you_win
+	j you_lose
+	
+#prep_you_win: lui $9, 0x1001
+	#addi $10, $0, 0xffffff #Mr. White do you win
+	#addi $9, $9, 13980
+
+#prep_you_lose: lui $9, 0x1001
+	#addi $10, $0, 0xffffff #Mr. White do you lose
+	#addi $9, $9, 13980
+	
+you_lose: nop
+	
+you_win: nop
+	
+fim: nop
