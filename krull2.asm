@@ -891,7 +891,7 @@ colisao: add $17, $13, $20 #verificar colisão superiro esquerda
 	add $17, $13, $20 #verificar colisão superior direita
 	addi $17, $17, 28
 	lw  $17, ($17)
-	bne $17, 0x000000, prep_tela
+	bne $17, 0x000000, verifica_marrom_monstro_2
 	add $17, $13, $20 #verificar colisão inferiror esquerda
 	addi $17, $17, 5628
 	lw $17, ($17)
@@ -905,13 +905,25 @@ colisao: add $17, $13, $20 #verificar colisão superiro esquerda
 verifica_marrom_monstro: add $17, $13, $20 #verificar colisão inferiror direita
 	addi $17, $17, 5640
 	lw $17, ($17)
-	bne $17, 0x000000, verifica_marrom_forte
+	bne $17, 0x843C14, verifica_marrom_forte
+	j prep_tela
+
+verifica_marrom_monstro_2: add $17, $13, $20 #verificar colisão superior direita
+	addi $17, $17, 28
+	lw  $17, ($17)
+	bne $17, 0x843C14, verifica_marrom_forte_2
 	j prep_tela	
 
 verifica_marrom_forte:  add $17, $13, $20 #verificar colisão inferiror direita
 	addi $17, $17, 5640
 	lw $17, ($17)
-	bne $17, 0x000000, prep_tela_2
+	bne $17, 0x985C28, prep_tela_2
+	j prep_tela
+
+verifica_marrom_forte_2: add $17, $13, $20 #verificar colisão superior direita
+	addi $17, $17, 28
+	lw  $17, ($17)
+	bne $17, 0x985C28, prep_tela_2
 	j prep_tela	
 
 prep_tela: lui $9, 0x1001
@@ -1314,7 +1326,7 @@ you_win: lui $9, 0x1001
 	sw $10, 0($9)
 	addi $9, $9, 16
 	sw $10, 0($9)
-	addi $9, $9, 448 #Começo da sétima linha da mensagem
+	addi $9, $9, 448 #Começo da sétima linha da mensagem (win)
 	sw $10, 0($9)
 	addi $9, $9, 16
 	sw $10, 0($9)
