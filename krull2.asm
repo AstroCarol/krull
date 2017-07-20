@@ -887,15 +887,15 @@ d: addi $20, $20, 4
 colisao: add $17, $13, $20 #verificar colisão superiro esquerda
 	addi $17, $17, -8
 	lw $17, ($17)
-	bne $17, 0x000000, you_lose
+	bne $17, 0x000000, prep_tela
 	add $17, $13, $20 #verificar colisão superior direita
 	addi $17, $17, 28
 	lw  $17, ($17)
-	bne $17, 0x000000, you_lose
+	bne $17, 0x000000, prep_tela
 	add $17, $13, $20 #verificar colisão inferiror esquerda
 	addi $17, $17, 5628
 	lw $17, ($17)
-	bne $17, 0x000000, you_lose
+	bne $17, 0x000000, prep_tela
 	add $17, $13, $20 #verificar colisão inferiror direita
 	addi $17, $17, 5640
 	lw $17, ($17)
@@ -905,25 +905,433 @@ colisao: add $17, $13, $20 #verificar colisão superiro esquerda
 verifica_marrom_monstro: add $17, $13, $20 #verificar colisão inferiror direita
 	addi $17, $17, 5640
 	lw $17, ($17)
-	bne $17, 0x843C14, verifica_marrom_forte
-	j you_lose
-	
-verifica_marrom_forte: add $17, $13, $20 #verificar colisão inferiror direita
+	bne $17, 0x000000, verifica_marrom_forte
+	j prep_tela	
+
+verifica_marrom_forte:  add $17, $13, $20 #verificar colisão inferiror direita
 	addi $17, $17, 5640
 	lw $17, ($17)
-	bne $17, 0x985C28, you_win
-	j you_lose
-	
-#prep_you_win: lui $9, 0x1001
-	#addi $10, $0, 0xffffff #Mr. White do you win
-	#addi $9, $9, 13980
+	bne $17, 0x000000, prep_tela_2
+	j prep_tela	
 
-#prep_you_lose: lui $9, 0x1001
-	#addi $10, $0, 0xffffff #Mr. White do you lose
-	#addi $9, $9, 13980
+prep_tela: lui $9, 0x1001
+	addi $10, $0, 0x000000 #Mr. Black do you win
+	add $11, $0, $0
 	
-you_lose: nop
+tela_1: sw $10, 0($9)
+	addi $9, $9, 4
+	addi $11, $11, 1
+	beq $11, 8192, you_lose	
+	j tela_1
+
+prep_tela_2: lui $9, 0x1001
+	addi $10, $0, 0x000000#Mr. Black do you lose
+	add $11, $0, $0
 	
-you_win: nop
+tela_2: sw $10, 0($9)
+	addi $9, $9, 4
+	addi $11, $11, 1
+	beq $11, 8192, you_win
+	j tela_2
+	
+you_lose: lui $9, 0x1001 
+	addi $10, $0, 0xffffff
+	addi $9, $9, 11420 #Começo da primeira linha da mensagem (you)
+	sw $10, 0($9)
+	addi $9, $9, 16
+	sw $10, 0($9)
+	addi $9, $9, 12
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 12
+	sw $10, 0($9)
+	addi $9, $9, 16
+	sw $10, 0($9)
+	addi $9, $9, 448 #Começo da segunda linah da mensagem (you)
+	sw $10, 0($9)
+	addi $9, $9, 16
+	sw $10, 0($9)
+	addi $9, $9, 8
+	sw $10, 0($9)
+	addi $9, $9, 16
+	sw $10, 0($9)
+	addi $9, $9, 8
+	sw $10, 0($9)
+	addi $9, $9, 16
+	sw $10, 0($9)
+	addi $9, $9, 448 #Começo da terceira linha da mensagem (you)
+	sw $10, 0($9)
+	addi $9, $9, 16
+	sw $10, 0($9)
+	addi $9, $9, 8
+	sw $10, 0($9)
+	addi $9, $9, 16
+	sw $10, 0($9)
+	addi $9, $9, 8
+	sw $10, 0($9)
+	addi $9, $9, 16
+	sw $10, 0($9)
+	addi $9, $9, 452 #Começo da Quarta linha da mensagem (you)
+	sw $10, 0($9)
+	addi $9, $9, 8
+	sw $10, 0($9)
+	addi $9, $9, 12
+	sw $10, 0($9)
+	addi $9, $9, 16
+	sw $10, 0($9)
+	addi $9, $9, 8
+	sw $10, 0($9)
+	addi $9, $9, 16
+	sw $10, 0($9)
+	addi $9, $9, 456 #Começo da Quinta linhda da mensagem (you)
+	sw $10, 0($9)
+	addi $9, $9, 16
+	sw $10, 0($9)
+	addi $9, $9, 16
+	sw $10, 0($9)
+	addi $9, $9, 8
+	sw $10, 0($9)
+	addi $9, $9, 16
+	sw $10, 0($9)
+	addi $9, $9, 456 #Começo da Sexta Linha da mensagem (you)
+	sw $10, 0($9)
+	addi $9, $9, 16
+	sw $10, 0($9)
+	addi $9, $9, 16
+	sw $10, 0($9)
+	addi $9, $9, 8
+	sw $10, 0($9)
+	addi $9, $9, 16
+	sw $10, 0($9)
+	addi $9, $9, 456 #Começo da Sétima Linha da mensagem (you)
+	sw $10, 0($9)
+	addi $9, $9, 20
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 16
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, -3056 #Começo da primeira linha da mensagem (lose)
+	sw $10, 0($9)
+	addi $9, $9, 24
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 16
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 12
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 428 #Começo da segunda Linha da mensagem(lose)
+	sw $10, 0($9)
+	addi $9, $9, 20
+	sw $10, 0($9)
+	addi $9, $9, 16
+	sw $10, 0($9)
+	addi $9, $9, 8
+	sw $10, 0($9)
+	addi $9, $9, 16
+	sw $10, 0($9)
+	addi $9, $9, 8
+	sw $10, 0($9)
+	addi $9, $9, 444 #Começo da terceira Linha da mensagem(lose)
+	sw $10, 0($9)
+	addi $9, $9, 20
+	sw $10, 0($9)
+	addi $9, $9, 16
+	sw $10, 0($9)
+	addi $9, $9, 8
+	sw $10, 0($9)
+	addi $9, $9, 24
+	sw $10, 0($9)
+	addi $9, $9, 444 #Começo da quarta Linha da mensagem(lose)
+	sw $10, 0($9)
+	addi $9, $9, 20
+	sw $10, 0($9)
+	addi $9, $9, 16
+	sw $10, 0($9)
+	addi $9, $9, 12
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 12
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 436 #Começo da quinta Linha da mensagem(lose)
+	sw $10, 0($9)
+	addi $9, $9, 20
+	sw $10, 0($9)
+	addi $9, $9, 16
+	sw $10, 0($9)
+	addi $9, $9, 24
+	sw $10, 0($9)
+	addi $9, $9, 8
+	sw $10, 0($9)
+	addi $9, $9, 444 #Começo da sexta Linha da mensagem(lose)
+	sw $10, 0($9)
+	addi $9, $9, 20
+	sw $10, 0($9)
+	addi $9, $9, 16
+	sw $10, 0($9)
+	addi $9, $9, 8
+	sw $10, 0($9)
+	addi $9, $9, 16
+	sw $10, 0($9)
+	addi $9, $9, 8
+	sw $10, 0($9)
+	addi $9, $9, 444 #Começo da sétima Linha da mensagem(lose)
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 12
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 16
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 12
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	j fim
+
+you_win: lui $9, 0x1001 
+	addi $10, $0, 0xffffff
+	addi $9, $9, 11420 #Começo da primeira linha da mensagem (you)
+	sw $10, 0($9)
+	addi $9, $9, 16
+	sw $10, 0($9)
+	addi $9, $9, 12
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 12
+	sw $10, 0($9)
+	addi $9, $9, 16
+	sw $10, 0($9)
+	addi $9, $9, 448 #Começo da segunda linah da mensagem (you)
+	sw $10, 0($9)
+	addi $9, $9, 16
+	sw $10, 0($9)
+	addi $9, $9, 8
+	sw $10, 0($9)
+	addi $9, $9, 16
+	sw $10, 0($9)
+	addi $9, $9, 8
+	sw $10, 0($9)
+	addi $9, $9, 16
+	sw $10, 0($9)
+	addi $9, $9, 448 #Começo da terceira linha da mensagem (you)
+	sw $10, 0($9)
+	addi $9, $9, 16
+	sw $10, 0($9)
+	addi $9, $9, 8
+	sw $10, 0($9)
+	addi $9, $9, 16
+	sw $10, 0($9)
+	addi $9, $9, 8
+	sw $10, 0($9)
+	addi $9, $9, 16
+	sw $10, 0($9)
+	addi $9, $9, 452 #Começo da Quarta linha da mensagem (you)
+	sw $10, 0($9)
+	addi $9, $9, 8
+	sw $10, 0($9)
+	addi $9, $9, 12
+	sw $10, 0($9)
+	addi $9, $9, 16
+	sw $10, 0($9)
+	addi $9, $9, 8
+	sw $10, 0($9)
+	addi $9, $9, 16
+	sw $10, 0($9)
+	addi $9, $9, 456 #Começo da Quinta linhda da mensagem (you)
+	sw $10, 0($9)
+	addi $9, $9, 16
+	sw $10, 0($9)
+	addi $9, $9, 16
+	sw $10, 0($9)
+	addi $9, $9, 8
+	sw $10, 0($9)
+	addi $9, $9, 16
+	sw $10, 0($9)
+	addi $9, $9, 456 #Começo da Sexta Linha da mensagem (you)
+	sw $10, 0($9)
+	addi $9, $9, 16
+	sw $10, 0($9)
+	addi $9, $9, 16
+	sw $10, 0($9)
+	addi $9, $9, 8
+	sw $10, 0($9)
+	addi $9, $9, 16
+	sw $10, 0($9)
+	addi $9, $9, 456 #Começo da Sétima Linha da mensagem (you)
+	sw $10, 0($9)
+	addi $9, $9, 20
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 16
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, -3056 #Começo da primeira linha mensagen  (Win)
+	sw $10, 0($9)
+	addi $9, $9, 16
+	sw $10, 0($9)
+	addi $9, $9, 8
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 8
+	sw $10, 0($9)
+	addi $9, $9, 16
+	sw $10, 0($9)
+	addi $9, $9, 448 #Começo da segunda linha mensagem (win)
+	sw $10, 0($9)
+	addi $9, $9, 16
+	sw $10, 0($9)
+	addi $9, $9, 16
+	sw $10, 0($9)
+	addi $9, $9, 16
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 12
+	sw $10, 0($9)
+	addi $9, $9, 448 #Começo da terceira linha mensagem (win)
+	sw $10, 0($9)
+	addi $9, $9, 16
+	sw $10, 0($9)
+	addi $9, $9, 16
+	sw $10, 0($9)
+	addi $9, $9, 16
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 8
+	sw $10, 0($9)
+	addi $9, $9, 448 #começo da quarta linha mensagem win
+	sw $10, 0($9)
+	addi $9, $9, 8
+	sw $10, 0($9)
+	addi $9, $9, 8
+	sw $10, 0($9)
+	addi $9, $9, 16
+	sw $10, 0($9)
+	addi $9, $9, 16
+	sw $10, 0($9)
+	addi $9, $9, 8
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 448 #Começo da quinta linha da mensagem win
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 8
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 16
+	sw $10, 0($9)
+	addi $9, $9, 16
+	sw $10, 0($9)
+	addi $9, $9, 12
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 448 #Começo da sexta linha da mensagem
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 8
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 16
+	sw $10, 0($9)
+	addi $9, $9, 16
+	sw $10, 0($9)
+	addi $9, $9, 16
+	sw $10, 0($9)
+	addi $9, $9, 448 #Começo da sétima linha da mensagem
+	sw $10, 0($9)
+	addi $9, $9, 16
+	sw $10, 0($9)
+	addi $9, $9, 8
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 4
+	sw $10, 0($9)
+	addi $9, $9, 8
+	sw $10, 0($9)
+	addi $9, $9, 16
+	sw $10, 0($9)
+	j fim
 	
 fim: nop
